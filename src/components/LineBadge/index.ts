@@ -1,0 +1,1 @@
+export { LineBadge } from './LineBadge';
