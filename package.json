@@ -20,7 +20,7 @@
     "dayjs": "^1.11.8",
     "native-base": "^3.4.28",
     "react": "18.2.0",
-    "react-native": "0.71.8",
+    "react-native": "0.72.1",
     "react-native-actions-sheet": "^0.8.29",
     "react-native-autocomplete-dropdown": "^2.1.1",
     "react-native-config": "^1.5.0",
