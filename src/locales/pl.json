@@ -1,0 +1,50 @@
+{
+  "StopsSearchBar": {
+    "placeholder": "Znajdź przystanek",
+    "noData": "Brak dostępnych przystanków"
+  },
+  "RouteActionSheet": {
+    "route": "Trasa:",
+    "departure": "odjazd:"
+  },
+  "RoutePointSelect": {
+    "startStop": "Przystanek początkowy",
+    "endStop": "Przystanek końcowy"
+  },
+  "RouteListItem": {
+    "departure": "odjazd:"
+  },
+  "RouteView": {
+    "appbarTitle": "Wyszukaj trasę"
+  },
+  "AboutAppCard": {
+    "info": "Informacje",
+    "version": "Wersja aplikacji",
+    "compilation": "Numer kompilacji",
+    "author": "Twórca",
+    "website": "Strona twórcy"
+  },
+  "TranslationCard": {
+    "lang": "Język"
+  },
+  "SettingsView": {
+    "appbarTitle": "Ustawienia"
+  },
+  "TimetableDataSwitch": {
+    "live": "Na żywo",
+    "fullSchedule": "Pełny rozkład",
+    "toast": "Funkcjonalność oczekuje na wdrożenie"
+  },
+  "TimetableScrollView": {
+    "noData": "Brak dostępnych informacji",
+    "number": "Nr",
+    "destination": "Kierunek",
+    "departure": "Odjazd"
+  },
+  "TimetableView": {
+    "appbarTitle": "Rozkład jazdy"
+  },
+  "TimetableViewContainer": {
+    "chooseStop": "Wybierz przystanek"
+  }
+}

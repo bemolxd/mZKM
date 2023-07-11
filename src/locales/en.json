@@ -1,0 +1,50 @@
+{
+  "StopsSearchBar": {
+    "placeholder": "Search stops",
+    "noData": "No stops available"
+  },
+  "RouteActionSheet": {
+    "route": "Route:",
+    "departure": "departure:"
+  },
+  "RoutePointSelect": {
+    "startStop": "Starting stop",
+    "endStop": "Final stop"
+  },
+  "RouteListItem": {
+    "departure": "departure:"
+  },
+  "RouteView": {
+    "appbarTitle": "Search routes"
+  },
+  "AboutAppCard": {
+    "info": "Info",
+    "version": "App version",
+    "compilation": "Compilation number",
+    "author": "Author",
+    "website": "Author's website"
+  },
+  "TranslationCard": {
+    "lang": "Language"
+  },
+  "SettingsView": {
+    "appbarTitle": "Settings"
+  },
+  "TimetableDataSwitch": {
+    "live": "Live",
+    "fullSchedule": "Full schedule",
+    "toast": "This feature will be available soon"
+  },
+  "TimetableScrollView": {
+    "noData": "No data available",
+    "number": "No.",
+    "destination": "Destination",
+    "departure": "Departure"
+  },
+  "TimetableView": {
+    "appbarTitle": "Timetable"
+  },
+  "TimetableViewContainer": {
+    "chooseStop": "Choose stop"
+  }
+}
