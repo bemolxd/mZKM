@@ -2,9 +2,11 @@ import { theme, HStack, Box, Text, Select } from 'native-base';
 import React, { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useAsyncStorage } from '../../../utils';
 
 export function TranslationCard(): ReactElement {
   const { t, i18n } = useTranslation();
+  const { set } = useAsyncStorage('@i18n-locale', 'pl');
 
   return (
     <HStack w="100%" bg={theme.colors.white} borderRadius={8} p={2} mb={2}>
@@ -20,7 +22,10 @@ export function TranslationCard(): ReactElement {
       </HStack>
       <Select
         selectedValue={i18n.language}
-        onValueChange={i18n.changeLanguage}
+        onValueChange={async value => {
+          i18n.changeLanguage(value);
+          await set(value);
+        }}
         w={24}
         dropdownIcon={
           <MaterialCommunityIcons
