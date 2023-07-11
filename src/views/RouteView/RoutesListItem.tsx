@@ -18,7 +18,7 @@ export function RoutesListItem({ element }: Props): ReactElement {
   const lastStop = element.routeStops[element.routeStops.length - 2];
 
   const navigation = useNavigation<NavigationProp<StackNavigatorParamList>>();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <TouchableOpacity
@@ -50,6 +50,7 @@ export function RoutesListItem({ element }: Props): ReactElement {
         <HStack justifyContent="flex-end" w="100%">
           <Text color={theme.colors.gray['600']}>
             {`${t('RouteListItem.departure')} ${dayjs()
+              .locale(i18n.language)
               .add(firstStop.departureTime, 's')
               .fromNow()}`}
           </Text>
