@@ -23,6 +23,10 @@ The current, publicly available website offering information on the timetable of
 - React Native Mapbox
 - React Query
 
+## Translations
+
+The app currently supports English and Polish (default) languages. To translate this app, please refer to `src/locales/en.json`. After reviewing its content and making proper translations, please create a new file `src/locales/[your-lang].json`. If you want your translations to go live, please create a new pull request with your changes.
+
 ## TODO
 
 - add support for full week schedule (needs changes in [API](https://github.com/bemolxd/better-zkm-api)),
