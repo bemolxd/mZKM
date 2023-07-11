@@ -7,6 +7,7 @@ import { TouchableOpacity } from 'react-native';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { StackNavigatorParamList } from '../types';
 import { LineBadge } from '../../components/LineBadge';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   element: RouteElement;
@@ -17,6 +18,7 @@ export function RoutesListItem({ element }: Props): ReactElement {
   const lastStop = element.routeStops[element.routeStops.length - 2];
 
   const navigation = useNavigation<NavigationProp<StackNavigatorParamList>>();
+  const { t, i18n } = useTranslation();
 
   return (
     <TouchableOpacity
@@ -47,7 +49,10 @@ export function RoutesListItem({ element }: Props): ReactElement {
         </HStack>
         <HStack justifyContent="flex-end" w="100%">
           <Text color={theme.colors.gray['600']}>
-            odjazd: {dayjs().add(firstStop.departureTime, 's').fromNow()}
+            {`${t('RouteListItem.departure')} ${dayjs()
+              .locale(i18n.language)
+              .add(firstStop.departureTime, 's')
+              .fromNow()}`}
           </Text>
         </HStack>
       </Box>

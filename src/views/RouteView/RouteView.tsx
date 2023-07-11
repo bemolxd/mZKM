@@ -6,6 +6,7 @@ import { RouteElement, useSearchRoute } from '../../mutations/searchRoute';
 import { RoutePointsSelect } from './RoutePointsSelect';
 import { dayjs } from '../../utils';
 import { RoutesListItem } from './RoutesListItem';
+import { useTranslation } from 'react-i18next';
 
 export function RouteView(): ReactElement {
   const [startStop, setStartStop] = useState<DataSetItem | null>(null);
@@ -28,9 +29,11 @@ export function RouteView(): ReactElement {
     }
   };
 
+  const { t } = useTranslation();
+
   return (
     <>
-      <AppBar title="Wyszukaj trasę">
+      <AppBar title={t('RouteView.appbarTitle')}>
         <RoutePointsSelect
           setStartStop={setStartStop}
           setEndStop={setEndStop}

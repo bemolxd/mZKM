@@ -18,6 +18,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { TouchableOpacity } from 'react-native';
 import { dayjs } from '../../utils';
 import { LineBadge } from '../../components/LineBadge';
+import { useTranslation } from 'react-i18next';
 
 export const ROUTE_ACTION_SHEET = 'route-action-sheet';
 
@@ -42,6 +43,8 @@ export function RouteActionSheet({
     acc[el.lineIdx].push(el);
     return acc;
   }, {} as Record<number, RouteStop[]>);
+
+  const { t } = useTranslation();
 
   return (
     <ActionSheet
@@ -84,9 +87,11 @@ export function RouteActionSheet({
         <Divider my={2} />
         <VStack w="100%" space={1}>
           <HStack w="100%" justifyContent="space-between" alignItems="center">
-            <Heading size="sm">Trasa:</Heading>
+            <Heading size="sm">{t('RouteActionSheet.route')}</Heading>
             <Text fontSize={16}>
-              odjazd: {dayjs().add(firstStop.departureTime, 's').fromNow()}
+              {`${t('RouteActionSheet.departure')} ${dayjs()
+                .add(firstStop.departureTime, 's')
+                .fromNow()}`}
             </Text>
           </HStack>
           <VStack space={1}>

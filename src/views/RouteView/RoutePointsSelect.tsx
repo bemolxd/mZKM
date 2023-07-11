@@ -3,6 +3,7 @@ import { DataSetItem, StopsSearchBar } from '../../components/StopsSearchBar';
 import { Box, Center, HStack, VStack, theme, Spinner } from 'native-base';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { TouchableOpacity } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   setStartStop: Dispatch<SetStateAction<DataSetItem | null>>;
@@ -19,6 +20,8 @@ export function RoutePointsSelect({
   onRouteSearch,
   isLoading,
 }: Props): ReactElement {
+  const { t } = useTranslation();
+
   return (
     <VStack w="100%" space={2}>
       <HStack w="100%" space={2} alignItems="center" zIndex={10}>
@@ -28,7 +31,7 @@ export function RoutePointsSelect({
           onClear={() => {
             console.log('onClear');
           }}
-          placeholder="Przystanek początkowy"
+          placeholder={t('RoutePointSelect.startStop')}
           zIndex={10}
         />
       </HStack>
@@ -39,7 +42,7 @@ export function RoutePointsSelect({
           onClear={() => {
             console.log('onClear');
           }}
-          placeholder="Przystanek końcowy"
+          placeholder={t('RoutePointSelect.endStop')}
           zIndex={9}
         />
       </HStack>

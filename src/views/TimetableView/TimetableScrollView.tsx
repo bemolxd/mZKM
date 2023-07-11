@@ -10,6 +10,7 @@ import {
 import React, { ReactElement } from 'react';
 import { DataSetItem } from '../../components/StopsSearchBar';
 import { useTimetableQuery } from '../../queries/timetableQuery';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   stop: DataSetItem;
@@ -17,6 +18,8 @@ type Props = {
 
 export function TimetableScrollView({ stop }: Props): ReactElement {
   const { results, isLoading, isError } = useTimetableQuery(stop.stopId);
+
+  const { t } = useTranslation();
 
   if (isLoading) {
     return (
@@ -29,7 +32,9 @@ export function TimetableScrollView({ stop }: Props): ReactElement {
   if (!results || isError) {
     return (
       <Center h="100%" safeAreaBottom={48}>
-        <Text color={theme.colors.gray['400']}>Brak dostępnych informacji</Text>
+        <Text color={theme.colors.gray['400']}>
+          {t('TimetableScrollView.noData')}
+        </Text>
       </Center>
     );
   }
@@ -48,14 +53,14 @@ export function TimetableScrollView({ stop }: Props): ReactElement {
             color={theme.colors.gray['700']}
             ml={1.5}
             mr={5}>
-            Nr.
+            {t('TimetableScrollView.number')}
           </Text>
           <Text fontStyle="italic" color={theme.colors.gray['700']}>
-            Kierunek
+            {t('TimetableScrollView.destination')}
           </Text>
         </HStack>
         <Text fontStyle="italic" color={theme.colors.gray['700']}>
-          Odjazd
+          {t('TimetableScrollView.departure')}
         </Text>
       </HStack>
       <ScrollView w="100%" px={2}>
