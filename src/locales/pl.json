@@ -1,6 +1,5 @@
 {
   "StopsSearchBar": {
-    "placeholder": "Znajdź przystanek",
     "noData": "Brak dostępnych przystanków"
   },
   "RouteActionSheet": {
@@ -42,7 +41,8 @@
     "departure": "Odjazd"
   },
   "TimetableView": {
-    "appbarTitle": "Rozkład jazdy"
+    "appbarTitle": "Rozkład jazdy",
+    "searchPlaceholder": "Znajdź przystanek"
   },
   "TimetableViewContainer": {
     "chooseStop": "Wybierz przystanek"

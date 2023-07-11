@@ -1,6 +1,5 @@
 {
   "StopsSearchBar": {
-    "placeholder": "Search stops",
     "noData": "No stops available"
   },
   "RouteActionSheet": {
@@ -42,7 +41,8 @@
     "departure": "Departure"
   },
   "TimetableView": {
-    "appbarTitle": "Timetable"
+    "appbarTitle": "Timetable",
+    "searchPlaceholder": "Search stops"
   },
   "TimetableViewContainer": {
     "chooseStop": "Choose stop"
