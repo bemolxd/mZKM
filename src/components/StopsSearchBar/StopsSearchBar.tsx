@@ -17,6 +17,7 @@ import { DataSetItem } from './types';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { LineBadge } from '../LineBadge';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   onSelect: (item: DataSetItem | null) => void;
@@ -31,7 +32,7 @@ export const StopsSearchBar = memo(
     onSelect,
     onClear,
     direction = 'down',
-    placeholder = 'Znajdź przystanek',
+    placeholder,
     zIndex = 10,
   }: Props) => {
     const dropdownController = useRef<AutocompleteDropdownRef>(null);
@@ -47,6 +48,7 @@ export const StopsSearchBar = memo(
       },
       lines: stop.lines,
     }));
+    const { t } = useTranslation();
 
     return (
       <Box flexGrow={1} flexShrink={1} zIndex={zIndex}>
@@ -58,8 +60,8 @@ export const StopsSearchBar = memo(
               ) : (
                 <Heading size="md" fontWeight={400}>
                   {searchQuery === ''
-                    ? placeholder
-                    : 'Brak dostępnych przystanków'}
+                    ? placeholder || t('StopsSearchBar.placeholder')
+                    : t('StopsSearchBar.noData')}
                 </Heading>
               )}
             </VStack>

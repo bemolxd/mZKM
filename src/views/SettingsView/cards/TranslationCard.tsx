@@ -1,9 +1,10 @@
 import { theme, HStack, Box, Text, Select } from 'native-base';
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export function TranslationCard(): ReactElement {
-  const [lang, setLang] = useState<string>('pl');
+  const { t, i18n } = useTranslation();
 
   return (
     <HStack w="100%" bg={theme.colors.white} borderRadius={8} p={2} mb={2}>
@@ -15,11 +16,11 @@ export function TranslationCard(): ReactElement {
             size={18}
           />
         </Box>
-        <Text fontSize={18}>Język</Text>
+        <Text fontSize={18}>{t('TranslationCard.lang')}</Text>
       </HStack>
       <Select
-        selectedValue={lang}
-        onValueChange={setLang}
+        selectedValue={i18n.language}
+        onValueChange={i18n.changeLanguage}
         w={24}
         dropdownIcon={
           <MaterialCommunityIcons
@@ -40,6 +41,7 @@ export function TranslationCard(): ReactElement {
         }}
         _actionSheet={{ hideDragIndicator: true }}>
         <Select.Item label="Polski" value="pl" />
+        <Select.Item label="English" value="en" />
       </Select>
     </HStack>
   );

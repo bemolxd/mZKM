@@ -1,6 +1,7 @@
 import React, { Dispatch, ReactElement, SetStateAction } from 'react';
 import { Badge, HStack, Text, useToast } from 'native-base';
 import { TouchableOpacity } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   tab: number;
@@ -11,6 +12,8 @@ export function TimetableDataSwitch({ tab, setTab }: Props): ReactElement {
   const toast = useToast();
   const toastId = 'full-schedule';
 
+  const { t } = useTranslation();
+
   return (
     <HStack w="100%" justifyContent="center" space={8}>
       <TouchableOpacity onPress={() => setTab(0)}>
@@ -19,7 +22,7 @@ export function TimetableDataSwitch({ tab, setTab }: Props): ReactElement {
           variant={tab === 0 ? 'solid' : 'outline'}
           borderRadius="full">
           <Text fontSize="16px" color={tab === 0 ? 'white' : undefined}>
-            Na żywo
+            {t('TimetableDataSwitch.live')}
           </Text>
         </Badge>
       </TouchableOpacity>
@@ -28,13 +31,13 @@ export function TimetableDataSwitch({ tab, setTab }: Props): ReactElement {
           if (!toast.isActive(toastId)) {
             toast.show({
               id: toastId,
-              title: 'Funkcjonalność oczekuje na wdrożenie',
+              title: t('TimetableDataSwitch.toast'),
             });
           }
         }}>
         <Badge colorScheme="gray" borderRadius="full">
           <Text fontSize="16px" color="gray.500">
-            Pełny rozkład
+            {t('TimetableDataSwitch.fullSchedule')}
           </Text>
         </Badge>
       </TouchableOpacity>
