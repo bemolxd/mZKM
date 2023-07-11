@@ -23,7 +23,7 @@ type Props = {
   onSelect: (item: DataSetItem | null) => void;
   onClear: () => void;
   direction?: 'up' | 'down';
-  placeholder?: string;
+  placeholder: string;
   zIndex?: number;
 };
 
@@ -60,7 +60,7 @@ export const StopsSearchBar = memo(
               ) : (
                 <Heading size="md" fontWeight={400}>
                   {searchQuery === ''
-                    ? placeholder || t('StopsSearchBar.placeholder')
+                    ? placeholder
                     : t('StopsSearchBar.noData')}
                 </Heading>
               )}

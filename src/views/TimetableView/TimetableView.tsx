@@ -15,6 +15,7 @@ export function TimetableView(): ReactElement {
     <>
       <AppBar title={t('TimetableView.appbarTitle')}>
         <StopsSearchBar
+          placeholder={t('TimetableView.searchPlaceholder')}
           onSelect={item => setStop(item)}
           onClear={() => {
             console.log('onClear');
